@@ -16,6 +16,11 @@ var _lss = (
         error: function(xhr, type) {}
       });
     }
+   
+    function saveToLS(scriptArray,name){
+
+      
+    }
 
     function splitScript(data) {
       var l = data.length;
