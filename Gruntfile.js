@@ -1,5 +1,5 @@
-// Generated on 2015-03-28 using
-// generator-happy-mobile-webapp 0.1.1
+// Generated on 2015-04-01 using
+// generator-happy-mobile-webapp 0.1.4
 'use strict';
 
 // # Globbing
@@ -51,6 +51,10 @@ module.exports = function (grunt) {
       styles: {
         files: ['<%= config.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
+      },
+      casperjs:{
+        files: ['<%= config.app %>/{,*/}*.{html,mst,htm}','test/**/*.js'],
+        tasks:['casperjs']
       },
       livereload: {
         options: {
@@ -311,6 +315,14 @@ module.exports = function (grunt) {
       }
     },
 
+    casperjs:{
+      options:{
+        async: {
+          parallel: false
+        }
+      },
+      files:['test/**/*.js']
+    },
     // Run some tasks in parallel to speed up build process
     concurrent: {
       server: [
