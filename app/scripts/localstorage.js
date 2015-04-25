@@ -11,15 +11,16 @@ var _lss = (
         url: url,
         dataType: 'text',
         success: function(data) {
-          console.log(data);
+          var temp=splitScript(data);
         },
         error: function(xhr, type) {}
       });
     }
-   
-    function saveToLS(scriptArray,name){
+    lss._test_split = splitScript;
 
-      
+    function saveToLS(scriptArray, name) {
+
+
     }
 
     function splitScript(data) {
